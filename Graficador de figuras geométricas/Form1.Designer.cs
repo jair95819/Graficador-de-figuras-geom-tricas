@@ -28,33 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Circulo = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Cuadrado = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Rectangulo = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Triangulo = new System.Windows.Forms.RadioButton();
             this.txtbx_base_radio_ladoX = new System.Windows.Forms.TextBox();
             this.lbl_base_radio_lado = new System.Windows.Forms.Label();
             this.txtbx_alturaY = new System.Windows.Forms.TextBox();
             this.lbl_altura = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_graficar = new System.Windows.Forms.Button();
+            this.rdbtn_empty = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // rdbtn_Circulo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 82);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Circulo";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbtn_Circulo.AutoSize = true;
+            this.rdbtn_Circulo.Location = new System.Drawing.Point(12, 73);
+            this.rdbtn_Circulo.Name = "rdbtn_Circulo";
+            this.rdbtn_Circulo.Size = new System.Drawing.Size(57, 17);
+            this.rdbtn_Circulo.TabIndex = 0;
+            this.rdbtn_Circulo.TabStop = true;
+            this.rdbtn_Circulo.Text = "Circulo";
+            this.rdbtn_Circulo.UseVisualStyleBackColor = true;
+            this.rdbtn_Circulo.CheckedChanged += new System.EventHandler(this.rdbtn_Circulo_CheckedChanged);
             // 
             // menuStrip1
             // 
@@ -87,42 +91,45 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // radioButton2
+            // rdbtn_Cuadrado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 105);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Cuadrado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbtn_Cuadrado.AutoSize = true;
+            this.rdbtn_Cuadrado.Location = new System.Drawing.Point(12, 96);
+            this.rdbtn_Cuadrado.Name = "rdbtn_Cuadrado";
+            this.rdbtn_Cuadrado.Size = new System.Drawing.Size(71, 17);
+            this.rdbtn_Cuadrado.TabIndex = 3;
+            this.rdbtn_Cuadrado.TabStop = true;
+            this.rdbtn_Cuadrado.Text = "Cuadrado";
+            this.rdbtn_Cuadrado.UseVisualStyleBackColor = true;
+            this.rdbtn_Cuadrado.CheckedChanged += new System.EventHandler(this.rdbtn_Cuadrado_CheckedChanged);
             // 
-            // radioButton3
+            // rdbtn_Rectangulo
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(12, 128);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(80, 17);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Rectángulo";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbtn_Rectangulo.AutoSize = true;
+            this.rdbtn_Rectangulo.Location = new System.Drawing.Point(12, 119);
+            this.rdbtn_Rectangulo.Name = "rdbtn_Rectangulo";
+            this.rdbtn_Rectangulo.Size = new System.Drawing.Size(80, 17);
+            this.rdbtn_Rectangulo.TabIndex = 4;
+            this.rdbtn_Rectangulo.TabStop = true;
+            this.rdbtn_Rectangulo.Text = "Rectángulo";
+            this.rdbtn_Rectangulo.UseVisualStyleBackColor = true;
+            this.rdbtn_Rectangulo.CheckedChanged += new System.EventHandler(this.rdbtn_Rectangulo_CheckedChanged);
             // 
-            // radioButton4
+            // rdbtn_Triangulo
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(12, 151);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(69, 17);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Triángulo";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbtn_Triangulo.AutoSize = true;
+            this.rdbtn_Triangulo.Location = new System.Drawing.Point(12, 142);
+            this.rdbtn_Triangulo.Name = "rdbtn_Triangulo";
+            this.rdbtn_Triangulo.Size = new System.Drawing.Size(69, 17);
+            this.rdbtn_Triangulo.TabIndex = 5;
+            this.rdbtn_Triangulo.TabStop = true;
+            this.rdbtn_Triangulo.Text = "Triángulo";
+            this.rdbtn_Triangulo.UseVisualStyleBackColor = true;
+            this.rdbtn_Triangulo.CheckedChanged += new System.EventHandler(this.rdbtn_Triangulo_CheckedChanged);
             // 
             // txtbx_base_radio_ladoX
             // 
-            this.txtbx_base_radio_ladoX.Location = new System.Drawing.Point(141, 78);
+            this.txtbx_base_radio_ladoX.Location = new System.Drawing.Point(40, 52);
             this.txtbx_base_radio_ladoX.Name = "txtbx_base_radio_ladoX";
             this.txtbx_base_radio_ladoX.Size = new System.Drawing.Size(100, 20);
             this.txtbx_base_radio_ladoX.TabIndex = 6;
@@ -130,7 +137,7 @@
             // lbl_base_radio_lado
             // 
             this.lbl_base_radio_lado.AutoSize = true;
-            this.lbl_base_radio_lado.Location = new System.Drawing.Point(118, 62);
+            this.lbl_base_radio_lado.Location = new System.Drawing.Point(17, 36);
             this.lbl_base_radio_lado.Name = "lbl_base_radio_lado";
             this.lbl_base_radio_lado.Size = new System.Drawing.Size(104, 13);
             this.lbl_base_radio_lado.TabIndex = 7;
@@ -138,7 +145,7 @@
             // 
             // txtbx_alturaY
             // 
-            this.txtbx_alturaY.Location = new System.Drawing.Point(141, 127);
+            this.txtbx_alturaY.Location = new System.Drawing.Point(40, 101);
             this.txtbx_alturaY.Name = "txtbx_alturaY";
             this.txtbx_alturaY.Size = new System.Drawing.Size(100, 20);
             this.txtbx_alturaY.TabIndex = 8;
@@ -146,36 +153,59 @@
             // lbl_altura
             // 
             this.lbl_altura.AutoSize = true;
-            this.lbl_altura.Location = new System.Drawing.Point(118, 111);
+            this.lbl_altura.Location = new System.Drawing.Point(17, 85);
             this.lbl_altura.Name = "lbl_altura";
             this.lbl_altura.Size = new System.Drawing.Size(37, 13);
             this.lbl_altura.TabIndex = 9;
             this.lbl_altura.Text = "Altura:";
             // 
-            // button1
+            // btn_graficar
             // 
-            this.button1.Location = new System.Drawing.Point(151, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 24);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Graficar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_graficar.Location = new System.Drawing.Point(50, 141);
+            this.btn_graficar.Name = "btn_graficar";
+            this.btn_graficar.Size = new System.Drawing.Size(80, 24);
+            this.btn_graficar.TabIndex = 10;
+            this.btn_graficar.Text = "Graficar";
+            this.btn_graficar.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_empty
+            // 
+            this.rdbtn_empty.AutoSize = true;
+            this.rdbtn_empty.Location = new System.Drawing.Point(12, 164);
+            this.rdbtn_empty.Name = "rdbtn_empty";
+            this.rdbtn_empty.Size = new System.Drawing.Size(51, 17);
+            this.rdbtn_empty.TabIndex = 11;
+            this.rdbtn_empty.TabStop = true;
+            this.rdbtn_empty.Text = "None";
+            this.rdbtn_empty.UseVisualStyleBackColor = true;
+            this.rdbtn_empty.CheckedChanged += new System.EventHandler(this.rdbtn_empty_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_graficar);
+            this.groupBox1.Controls.Add(this.lbl_altura);
+            this.groupBox1.Controls.Add(this.txtbx_alturaY);
+            this.groupBox1.Controls.Add(this.lbl_base_radio_lado);
+            this.groupBox1.Controls.Add(this.txtbx_base_radio_ladoX);
+            this.groupBox1.Location = new System.Drawing.Point(98, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 200);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 261);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lbl_altura);
-            this.Controls.Add(this.txtbx_alturaY);
-            this.Controls.Add(this.lbl_base_radio_lado);
-            this.Controls.Add(this.txtbx_base_radio_ladoX);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rdbtn_empty);
+            this.Controls.Add(this.rdbtn_Triangulo);
+            this.Controls.Add(this.rdbtn_Rectangulo);
+            this.Controls.Add(this.rdbtn_Cuadrado);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdbtn_Circulo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -184,6 +214,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,19 +223,21 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbtn_Circulo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdbtn_Cuadrado;
+        private System.Windows.Forms.RadioButton rdbtn_Rectangulo;
+        private System.Windows.Forms.RadioButton rdbtn_Triangulo;
         private System.Windows.Forms.TextBox txtbx_base_radio_ladoX;
         private System.Windows.Forms.Label lbl_base_radio_lado;
         private System.Windows.Forms.TextBox txtbx_alturaY;
         private System.Windows.Forms.Label lbl_altura;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_graficar;
+        private System.Windows.Forms.RadioButton rdbtn_empty;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
