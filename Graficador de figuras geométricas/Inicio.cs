@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Graficador_de_figuras_geométricas
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
             rdbtn_empty.Checked = true;

@@ -1,6 +1,6 @@
 ﻿namespace Graficador_de_figuras_geométricas
 {
-    partial class Form1
+    partial class Inicio
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctbx_visualizer = new System.Windows.Forms.PictureBox();
             this.rdbtn_Cuadrado = new System.Windows.Forms.RadioButton();
             this.rdbtn_Rectangulo = new System.Windows.Forms.RadioButton();
             this.rdbtn_Triangulo = new System.Windows.Forms.RadioButton();
@@ -42,11 +42,11 @@
             this.lbl_altura = new System.Windows.Forms.Label();
             this.btn_graficar = new System.Windows.Forms.Button();
             this.rdbtn_empty = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpbx_Data = new System.Windows.Forms.GroupBox();
             this.lbl_none = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbx_visualizer)).BeginInit();
+            this.grpbx_Data.SuspendLayout();
             this.SuspendLayout();
             // 
             // rdbtn_Circulo
@@ -84,13 +84,13 @@
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             // 
-            // pictureBox1
+            // pctbx_visualizer
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(292, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 200);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pctbx_visualizer.Location = new System.Drawing.Point(292, 38);
+            this.pctbx_visualizer.Name = "pctbx_visualizer";
+            this.pctbx_visualizer.Size = new System.Drawing.Size(250, 200);
+            this.pctbx_visualizer.TabIndex = 2;
+            this.pctbx_visualizer.TabStop = false;
             // 
             // rdbtn_Cuadrado
             // 
@@ -181,20 +181,20 @@
             this.rdbtn_empty.UseVisualStyleBackColor = true;
             this.rdbtn_empty.CheckedChanged += new System.EventHandler(this.rdbtn_empty_CheckedChanged);
             // 
-            // groupBox1
+            // grpbx_Data
             // 
-            this.groupBox1.Controls.Add(this.lbl_none);
-            this.groupBox1.Controls.Add(this.btn_graficar);
-            this.groupBox1.Controls.Add(this.lbl_altura);
-            this.groupBox1.Controls.Add(this.txtbx_alturaY);
-            this.groupBox1.Controls.Add(this.lbl_base_radio_lado);
-            this.groupBox1.Controls.Add(this.txtbx_base_radio_ladoX);
-            this.groupBox1.Location = new System.Drawing.Point(98, 38);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 200);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos";
+            this.grpbx_Data.Controls.Add(this.lbl_none);
+            this.grpbx_Data.Controls.Add(this.btn_graficar);
+            this.grpbx_Data.Controls.Add(this.lbl_altura);
+            this.grpbx_Data.Controls.Add(this.txtbx_alturaY);
+            this.grpbx_Data.Controls.Add(this.lbl_base_radio_lado);
+            this.grpbx_Data.Controls.Add(this.txtbx_base_radio_ladoX);
+            this.grpbx_Data.Location = new System.Drawing.Point(98, 38);
+            this.grpbx_Data.Name = "grpbx_Data";
+            this.grpbx_Data.Size = new System.Drawing.Size(173, 200);
+            this.grpbx_Data.TabIndex = 12;
+            this.grpbx_Data.TabStop = false;
+            this.grpbx_Data.Text = "Datos";
             // 
             // lbl_none
             // 
@@ -210,12 +210,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 261);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpbx_Data);
             this.Controls.Add(this.rdbtn_empty);
             this.Controls.Add(this.rdbtn_Triangulo);
             this.Controls.Add(this.rdbtn_Rectangulo);
             this.Controls.Add(this.rdbtn_Cuadrado);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctbx_visualizer);
             this.Controls.Add(this.rdbtn_Circulo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -224,9 +224,9 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbx_visualizer)).EndInit();
+            this.grpbx_Data.ResumeLayout(false);
+            this.grpbx_Data.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +238,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctbx_visualizer;
         private System.Windows.Forms.RadioButton rdbtn_Cuadrado;
         private System.Windows.Forms.RadioButton rdbtn_Rectangulo;
         private System.Windows.Forms.RadioButton rdbtn_Triangulo;
@@ -248,7 +248,7 @@
         private System.Windows.Forms.Label lbl_altura;
         private System.Windows.Forms.Button btn_graficar;
         private System.Windows.Forms.RadioButton rdbtn_empty;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpbx_Data;
         private System.Windows.Forms.Label lbl_none;
     }
 }

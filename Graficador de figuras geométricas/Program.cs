@@ -16,7 +16,7 @@ namespace Graficador_de_figuras_geométricas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Inicio());
         }
     }
 }
