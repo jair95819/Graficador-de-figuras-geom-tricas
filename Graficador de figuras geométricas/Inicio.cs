@@ -12,9 +12,19 @@ namespace Graficador_de_figuras_geométricas
 {
     public partial class Inicio : Form
     {
+        string color_grafico;
+
         public Inicio()
         {
             InitializeComponent();
+            rdbtn_empty.Checked = true;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+        }
+
+        public Inicio(string color)
+        {
+            InitializeComponent();
+            color_grafico = color;
             rdbtn_empty.Checked = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
         }
@@ -55,6 +65,7 @@ namespace Graficador_de_figuras_geométricas
             {
                 lbl_none.Visible = false;
                 lbl_none.Dock = DockStyle.None;
+                pctbx_visualizer.Size = new Size(200, 200);
 
                 txtbx_base_radio_ladoX.ReadOnly = false;
                 txtbx_alturaY.ReadOnly = true;
@@ -63,6 +74,7 @@ namespace Graficador_de_figuras_geométricas
             {
                 lbl_none.Visible = false;
                 lbl_none.Dock = DockStyle.None;
+                pctbx_visualizer.Size = new Size(250, 200);
 
                 txtbx_base_radio_ladoX.ReadOnly = false;
                 txtbx_alturaY.ReadOnly = false;
@@ -71,7 +83,15 @@ namespace Graficador_de_figuras_geométricas
             {
                 lbl_none.Visible = true;
                 lbl_none.Dock = DockStyle.Fill;
+                pctbx_visualizer.Size = new Size(250, 200);
             }
+        }
+
+        private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Opciones ventana_nueva = new Opciones();
+            ventana_nueva.Show();
+            this.Hide();
         }
     }
 }

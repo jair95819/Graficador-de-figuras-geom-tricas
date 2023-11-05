@@ -83,6 +83,7 @@
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
+            this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
             // pctbx_visualizer
             // 
@@ -95,7 +96,7 @@
             // rdbtn_Cuadrado
             // 
             this.rdbtn_Cuadrado.AutoSize = true;
-            this.rdbtn_Cuadrado.Location = new System.Drawing.Point(12, 96);
+            this.rdbtn_Cuadrado.Location = new System.Drawing.Point(12, 95);
             this.rdbtn_Cuadrado.Name = "rdbtn_Cuadrado";
             this.rdbtn_Cuadrado.Size = new System.Drawing.Size(71, 17);
             this.rdbtn_Cuadrado.TabIndex = 3;
@@ -107,7 +108,7 @@
             // rdbtn_Rectangulo
             // 
             this.rdbtn_Rectangulo.AutoSize = true;
-            this.rdbtn_Rectangulo.Location = new System.Drawing.Point(12, 119);
+            this.rdbtn_Rectangulo.Location = new System.Drawing.Point(12, 117);
             this.rdbtn_Rectangulo.Name = "rdbtn_Rectangulo";
             this.rdbtn_Rectangulo.Size = new System.Drawing.Size(80, 17);
             this.rdbtn_Rectangulo.TabIndex = 4;
@@ -119,7 +120,7 @@
             // rdbtn_Triangulo
             // 
             this.rdbtn_Triangulo.AutoSize = true;
-            this.rdbtn_Triangulo.Location = new System.Drawing.Point(12, 142);
+            this.rdbtn_Triangulo.Location = new System.Drawing.Point(12, 139);
             this.rdbtn_Triangulo.Name = "rdbtn_Triangulo";
             this.rdbtn_Triangulo.Size = new System.Drawing.Size(69, 17);
             this.rdbtn_Triangulo.TabIndex = 5;
@@ -172,7 +173,7 @@
             // rdbtn_empty
             // 
             this.rdbtn_empty.AutoSize = true;
-            this.rdbtn_empty.Location = new System.Drawing.Point(12, 164);
+            this.rdbtn_empty.Location = new System.Drawing.Point(12, 161);
             this.rdbtn_empty.Name = "rdbtn_empty";
             this.rdbtn_empty.Size = new System.Drawing.Size(51, 17);
             this.rdbtn_empty.TabIndex = 11;
@@ -205,7 +206,7 @@
             this.lbl_none.Text = "Elige una de las opciones para comenzar a graficar tu figura geométrica!";
             this.lbl_none.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,9 +220,9 @@
             this.Controls.Add(this.rdbtn_Circulo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Graficador de figuras geométricas";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbx_visualizer)).EndInit();
