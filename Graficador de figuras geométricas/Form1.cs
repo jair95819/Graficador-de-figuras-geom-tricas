@@ -53,18 +53,24 @@ namespace Graficador_de_figuras_geométricas
         {
             if (text == "Radio:" || text == "Lado:")
             {
+                lbl_none.Visible = false;
+                lbl_none.Dock = DockStyle.None;
+
                 txtbx_base_radio_ladoX.ReadOnly = false;
                 txtbx_alturaY.ReadOnly = true;
             }
             else if (text == "Base:")
             {
+                lbl_none.Visible = false;
+                lbl_none.Dock = DockStyle.None;
+
                 txtbx_base_radio_ladoX.ReadOnly = false;
                 txtbx_alturaY.ReadOnly = false;
             }
             else
             {
-                txtbx_base_radio_ladoX.ReadOnly = true;
-                txtbx_alturaY.ReadOnly = true;
+                lbl_none.Visible = true;
+                lbl_none.Dock = DockStyle.Fill;
             }
         }
     }

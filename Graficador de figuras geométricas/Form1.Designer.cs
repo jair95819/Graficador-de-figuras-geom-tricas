@@ -43,6 +43,7 @@
             this.btn_graficar = new System.Windows.Forms.Button();
             this.rdbtn_empty = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_none = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -182,6 +183,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_none);
             this.groupBox1.Controls.Add(this.btn_graficar);
             this.groupBox1.Controls.Add(this.lbl_altura);
             this.groupBox1.Controls.Add(this.txtbx_alturaY);
@@ -193,6 +195,15 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // lbl_none
+            // 
+            this.lbl_none.Location = new System.Drawing.Point(6, 54);
+            this.lbl_none.Name = "lbl_none";
+            this.lbl_none.Size = new System.Drawing.Size(161, 71);
+            this.lbl_none.TabIndex = 11;
+            this.lbl_none.Text = "Elige una de las opciones para comenzar a graficar tu figura geométrica!";
+            this.lbl_none.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -238,6 +249,7 @@
         private System.Windows.Forms.Button btn_graficar;
         private System.Windows.Forms.RadioButton rdbtn_empty;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_none;
     }
 }
 
