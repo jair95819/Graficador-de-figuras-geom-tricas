@@ -34,7 +34,7 @@
             this.grpbx_Data = new System.Windows.Forms.GroupBox();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.lbl_Color = new System.Windows.Forms.Label();
-            this.txtbx_colorGrafico = new System.Windows.Forms.TextBox();
+            this.cmbx_Colores = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.grpbx_Data.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +66,9 @@
             // grpbx_Data
             // 
             this.grpbx_Data.BackColor = System.Drawing.SystemColors.Control;
+            this.grpbx_Data.Controls.Add(this.cmbx_Colores);
             this.grpbx_Data.Controls.Add(this.btn_Guardar);
             this.grpbx_Data.Controls.Add(this.lbl_Color);
-            this.grpbx_Data.Controls.Add(this.txtbx_colorGrafico);
             this.grpbx_Data.Location = new System.Drawing.Point(92, 40);
             this.grpbx_Data.Name = "grpbx_Data";
             this.grpbx_Data.Size = new System.Drawing.Size(173, 200);
@@ -78,7 +78,7 @@
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.Location = new System.Drawing.Point(50, 141);
+            this.btn_Guardar.Location = new System.Drawing.Point(49, 133);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(80, 24);
             this.btn_Guardar.TabIndex = 10;
@@ -89,18 +89,21 @@
             // lbl_Color
             // 
             this.lbl_Color.AutoSize = true;
-            this.lbl_Color.Location = new System.Drawing.Point(17, 68);
+            this.lbl_Color.Location = new System.Drawing.Point(16, 57);
             this.lbl_Color.Name = "lbl_Color";
             this.lbl_Color.Size = new System.Drawing.Size(86, 13);
             this.lbl_Color.TabIndex = 7;
             this.lbl_Color.Text = "Color del gráfico:";
             // 
-            // txtbx_colorGrafico
+            // cmbx_Colores
             // 
-            this.txtbx_colorGrafico.Location = new System.Drawing.Point(40, 84);
-            this.txtbx_colorGrafico.Name = "txtbx_colorGrafico";
-            this.txtbx_colorGrafico.Size = new System.Drawing.Size(100, 20);
-            this.txtbx_colorGrafico.TabIndex = 6;
+            this.cmbx_Colores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbx_Colores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbx_Colores.FormattingEnabled = true;
+            this.cmbx_Colores.Location = new System.Drawing.Point(29, 84);
+            this.cmbx_Colores.Name = "cmbx_Colores";
+            this.cmbx_Colores.Size = new System.Drawing.Size(121, 21);
+            this.cmbx_Colores.TabIndex = 11;
             // 
             // Opciones
             // 
@@ -130,6 +133,6 @@
         private System.Windows.Forms.GroupBox grpbx_Data;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Label lbl_Color;
-        private System.Windows.Forms.TextBox txtbx_colorGrafico;
+        private System.Windows.Forms.ComboBox cmbx_Colores;
     }
 }
