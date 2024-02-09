@@ -12,17 +12,13 @@ namespace Graficador_de_figuras_geométricas
 {
     public partial class Opciones : Form
     {
-        string[] temas = new string[] { "Claro", "Oscuro", "Default" };
         string color_grafico;
 
         public Opciones()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            foreach (string t in temas)
-            {
-                cmbbx_temas.Items.Add(t);
-            }
+
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,14 +39,10 @@ namespace Graficador_de_figuras_geométricas
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            if(txtbx_colorGrafico.Text.Length < 0 && cmbbx_temas.Text.Length < 0)
-            {
-                MessageBox.Show("No hubo ningún cambio!");
-            }
-            else if(txtbx_colorGrafico.Text.Length > 0)
+            if(txtbx_colorGrafico.Text.Length > 0)
             {
                 color_grafico = txtbx_colorGrafico.Text;
-                MessageBox.Show("Has cambiado el color predeterminado del gráficador!");
+                MessageBox.Show("Cambio guardado.");
             }
         }
     }

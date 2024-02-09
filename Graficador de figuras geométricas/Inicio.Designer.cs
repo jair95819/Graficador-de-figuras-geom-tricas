@@ -44,6 +44,7 @@
             this.rdbtn_empty = new System.Windows.Forms.RadioButton();
             this.grpbx_Data = new System.Windows.Forms.GroupBox();
             this.lbl_none = new System.Windows.Forms.Label();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbx_visualizer)).BeginInit();
             this.grpbx_Data.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // pctbx_visualizer
             // 
+            this.pctbx_visualizer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctbx_visualizer.Location = new System.Drawing.Point(292, 38);
             this.pctbx_visualizer.Name = "pctbx_visualizer";
             this.pctbx_visualizer.Size = new System.Drawing.Size(250, 200);
@@ -206,11 +208,23 @@
             this.lbl_none.Text = "Elige una de las opciones para comenzar a graficar tu figura geométrica!";
             this.lbl_none.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_Salir
+            // 
+            this.btn_Salir.Location = new System.Drawing.Point(466, 256);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salir.TabIndex = 13;
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 261);
+            this.ClientSize = new System.Drawing.Size(584, 291);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.grpbx_Data);
             this.Controls.Add(this.rdbtn_empty);
             this.Controls.Add(this.rdbtn_Triangulo);
@@ -251,6 +265,7 @@
         private System.Windows.Forms.RadioButton rdbtn_empty;
         private System.Windows.Forms.GroupBox grpbx_Data;
         private System.Windows.Forms.Label lbl_none;
+        private System.Windows.Forms.Button btn_Salir;
     }
 }
 

@@ -93,5 +93,10 @@ namespace Graficador_de_figuras_geométricas
             ventana_nueva.Show();
             this.Hide();
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

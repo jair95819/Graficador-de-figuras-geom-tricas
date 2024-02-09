@@ -33,10 +33,8 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpbx_Data = new System.Windows.Forms.GroupBox();
             this.btn_Guardar = new System.Windows.Forms.Button();
-            this.lbl_altura = new System.Windows.Forms.Label();
             this.lbl_Color = new System.Windows.Forms.Label();
             this.txtbx_colorGrafico = new System.Windows.Forms.TextBox();
-            this.cmbbx_temas = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.grpbx_Data.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +66,7 @@
             // grpbx_Data
             // 
             this.grpbx_Data.BackColor = System.Drawing.SystemColors.Control;
-            this.grpbx_Data.Controls.Add(this.cmbbx_temas);
             this.grpbx_Data.Controls.Add(this.btn_Guardar);
-            this.grpbx_Data.Controls.Add(this.lbl_altura);
             this.grpbx_Data.Controls.Add(this.lbl_Color);
             this.grpbx_Data.Controls.Add(this.txtbx_colorGrafico);
             this.grpbx_Data.Location = new System.Drawing.Point(92, 40);
@@ -90,19 +86,10 @@
             this.btn_Guardar.UseVisualStyleBackColor = true;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
-            // lbl_altura
-            // 
-            this.lbl_altura.AutoSize = true;
-            this.lbl_altura.Location = new System.Drawing.Point(17, 85);
-            this.lbl_altura.Name = "lbl_altura";
-            this.lbl_altura.Size = new System.Drawing.Size(37, 13);
-            this.lbl_altura.TabIndex = 9;
-            this.lbl_altura.Text = "Tema:";
-            // 
             // lbl_Color
             // 
             this.lbl_Color.AutoSize = true;
-            this.lbl_Color.Location = new System.Drawing.Point(17, 36);
+            this.lbl_Color.Location = new System.Drawing.Point(17, 68);
             this.lbl_Color.Name = "lbl_Color";
             this.lbl_Color.Size = new System.Drawing.Size(86, 13);
             this.lbl_Color.TabIndex = 7;
@@ -110,24 +97,17 @@
             // 
             // txtbx_colorGrafico
             // 
-            this.txtbx_colorGrafico.Location = new System.Drawing.Point(40, 52);
+            this.txtbx_colorGrafico.Location = new System.Drawing.Point(40, 84);
             this.txtbx_colorGrafico.Name = "txtbx_colorGrafico";
             this.txtbx_colorGrafico.Size = new System.Drawing.Size(100, 20);
             this.txtbx_colorGrafico.TabIndex = 6;
-            // 
-            // cmbbx_temas
-            // 
-            this.cmbbx_temas.FormattingEnabled = true;
-            this.cmbbx_temas.Location = new System.Drawing.Point(40, 101);
-            this.cmbbx_temas.Name = "cmbbx_temas";
-            this.cmbbx_temas.Size = new System.Drawing.Size(100, 21);
-            this.cmbbx_temas.TabIndex = 11;
             // 
             // Opciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 261);
+            this.ClientSize = new System.Drawing.Size(584, 291);
+            this.ControlBox = false;
             this.Controls.Add(this.grpbx_Data);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Opciones";
@@ -149,9 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpbx_Data;
         private System.Windows.Forms.Button btn_Guardar;
-        private System.Windows.Forms.Label lbl_altura;
         private System.Windows.Forms.Label lbl_Color;
         private System.Windows.Forms.TextBox txtbx_colorGrafico;
-        private System.Windows.Forms.ComboBox cmbbx_temas;
     }
 }
