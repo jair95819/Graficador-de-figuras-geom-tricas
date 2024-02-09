@@ -173,6 +173,7 @@
             this.btn_Graficar.TabIndex = 10;
             this.btn_Graficar.Text = "Graficar";
             this.btn_Graficar.UseVisualStyleBackColor = true;
+            this.btn_Graficar.Click += new System.EventHandler(this.btn_Graficar_Click);
             // 
             // rdbtn_empty
             // 

@@ -33,37 +33,32 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_Circulo_CheckedChanged(object sender, EventArgs e)
         {
-            medidaX = lbl_base_radio_lado.Text;
-            medidaX = "Radio:";
-            revision(medidaX);
+            lbl_base_radio_lado.Text = "Radio:";
+            revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Cuadrado_CheckedChanged(object sender, EventArgs e)
         {
-            medidaX = lbl_base_radio_lado.Text;
-            medidaX = "Lado:";
-            revision(medidaX);
+            lbl_base_radio_lado.Text = "Lado:";
+            revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Rectangulo_CheckedChanged(object sender, EventArgs e)
         {
-            medidaX = lbl_base_radio_lado.Text;
-            medidaX = "Base:";
-            revision(medidaX);
+            lbl_base_radio_lado.Text = "Base:";
+            revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Triangulo_CheckedChanged(object sender, EventArgs e)
         {
-            medidaX = lbl_base_radio_lado.Text;
-            medidaX = "Base:";
-            revision(medidaX);
+            lbl_base_radio_lado.Text = "Base:";
+            revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_empty_CheckedChanged(object sender, EventArgs e)
         {
-            medidaX = lbl_base_radio_lado.Text;
-            medidaX = "Base-Radio-Lado:";
-            revision(medidaX);
+            lbl_base_radio_lado.Text = "Base-Radio-Lado:";
+            revision(lbl_base_radio_lado.Text);
         }
 
         public void revision(string text)
@@ -91,6 +86,65 @@ namespace Graficador_de_figuras_geométricas
             }
         }
 
+        private void btn_Graficar_Click(object sender, EventArgs e)
+        {
+            switch (lbl_base_radio_lado.Text)
+            {
+                case "Lado:":
+                    
+                    picbx_visualizer.Paint += Picbx_visualizer_Paint_Cuadrado;
+                    picbx_visualizer.Invalidate();
+                    break;
+
+                case "Base:":
+                    if (rdbtn_Rectangulo.Checked)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                    break;
+
+                case "Radio:":
+
+                    break;
+
+                default:
+
+                    break;
+            }
+                
+        }
+
+        private void Picbx_visualizer_Paint_Cuadrado(object sender, PaintEventArgs e)
+        {
+            int lado = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
+            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+
+            if(lado >= 195)
+            {
+                DialogResult diag = MessageBox.Show("EL cuadrado podría salir de los márgenes del marco, ¿Desea continuar?", "Aviso", botones);
+                if (diag.Equals(DialogResult.Yes)) //CORREGIR PROBLEMA MESSAGE BOX
+                {
+                    Graphics g = e.Graphics;
+                    Pen p = new Pen(color_grafico, 2);
+
+                    Rectangle cuadrado = new Rectangle(30, 5, lado, lado);
+                    g.DrawRectangle(p, cuadrado);
+                }
+                
+            } else
+            {
+                Graphics g = e.Graphics;
+                Pen p = new Pen(color_grafico, 2);
+
+                Rectangle cuadrado = new Rectangle(30, 5, lado, lado);
+                g.DrawRectangle(p, cuadrado);
+            }     
+        }
+
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Opciones ventana_nueva = new Opciones();
@@ -102,7 +156,5 @@ namespace Graficador_de_figuras_geométricas
         {
             Application.Exit();
         }
-
-
     }
 }
