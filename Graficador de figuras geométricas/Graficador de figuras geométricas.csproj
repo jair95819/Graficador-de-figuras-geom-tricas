@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circulo.cs" />
-    <Compile Include="Cuadrado.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
