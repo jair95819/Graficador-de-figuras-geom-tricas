@@ -32,13 +32,19 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_Circulo_CheckedChanged(object sender, EventArgs e)
         {
-            this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 195");
+            txtbx_base_radio_ladoX.Clear();
+            txtbx_alturaY.Clear();
+
+            this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 194");
             lbl_base_radio_lado.Text = "Radio:";
             revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Cuadrado_CheckedChanged(object sender, EventArgs e)
         {
+            txtbx_base_radio_ladoX.Clear();
+            txtbx_alturaY.Clear();
+
             this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 195");
             lbl_base_radio_lado.Text = "Lado:";
             revision(lbl_base_radio_lado.Text);
@@ -46,6 +52,9 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_Rectangulo_CheckedChanged(object sender, EventArgs e)
         {
+            txtbx_base_radio_ladoX.Clear();
+            txtbx_alturaY.Clear();
+
             this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 220");
             this.toolTip2.SetToolTip(lbl_altura, "Solo puedes ingresar valores desde 0 hasta 193");
             lbl_base_radio_lado.Text = "Base:";
@@ -54,12 +63,18 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_Triangulo_CheckedChanged(object sender, EventArgs e)
         {
+            txtbx_base_radio_ladoX.Clear();
+            txtbx_alturaY.Clear();
+
             lbl_base_radio_lado.Text = "Base:";
             revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_empty_CheckedChanged(object sender, EventArgs e)
         {
+            txtbx_base_radio_ladoX.Clear();
+            txtbx_alturaY.Clear();
+
             Graphics g = picbx_visualizer.CreateGraphics();
             g.Clear(Color.LightGray);
 
@@ -136,6 +151,7 @@ namespace Graficador_de_figuras_geométricas
             picbx_visualizer.Paint -= Picbx_visualizer_Paint_Rectangulo;
             picbx_visualizer.Paint -= Picbx_visualizer_Paint_Triangulo;
 
+            
             picbx_visualizer.Invalidate();
         }
 
@@ -143,10 +159,14 @@ namespace Graficador_de_figuras_geométricas
         {
             int radio = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
 
-            if(radio <= 195)
+            if(radio <= 194)
             {
                 Circulo nuevo = new Circulo(radio);
                 nuevo.GraficarCirculo(e.Graphics, color_grafico);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo graficar porque sale de los márgenes", "Error");
             }
         }
 
@@ -155,11 +175,16 @@ namespace Graficador_de_figuras_geométricas
             int baseT = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
             int alturaT = Convert.ToInt32(txtbx_alturaY.Text);
 
-            Graphics g = e.Graphics;
-            Pen p = new Pen(color_grafico, 2);
-
-
-            g.DrawLine(p, 150, alturaT, 10, baseT); //FALTA CORREGIR
+            if(baseT <= 277 && alturaT <= 197)
+            {
+                Triangulo nuevo = new Triangulo(baseT, alturaT);
+                nuevo.GraficarTriangulo(e.Graphics, color_grafico);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo graficar porque sale de los márgenes", "Error");
+            }
+            
         }
 
         private void Picbx_visualizer_Paint_Rectangulo(object sender, PaintEventArgs e)
@@ -172,6 +197,10 @@ namespace Graficador_de_figuras_geométricas
                 Rectangulo nuevo = new Rectangulo(largo, alto);
                 nuevo.GraficarRectangulo(e.Graphics, color_grafico);
             }
+            else
+            {
+                MessageBox.Show("No se pudo graficar porque sale de los márgenes", "Error");
+            }
         }
 
         private void Picbx_visualizer_Paint_Cuadrado(object sender, PaintEventArgs e)
@@ -182,6 +211,10 @@ namespace Graficador_de_figuras_geométricas
             {
                 Cuadrado nuevo = new Cuadrado(lado);
                 nuevo.GraficarCuadrado(e.Graphics, color_grafico);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo graficar porque sale de los márgenes", "Error");
             }
         }
 
