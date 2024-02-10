@@ -224,7 +224,7 @@ namespace Graficador_de_figuras_geométricas
             DialogResult diag = MessageBox.Show("Se perderán todos los dibujos, ¿desea continuar?", "Aviso", buttons);
             if(diag == DialogResult.Yes)
             {
-                Opciones ventana_nueva = new Opciones();
+                Opciones ventana_nueva = new Opciones(color_grafico);
                 ventana_nueva.Show();
                 this.Hide();
             }
