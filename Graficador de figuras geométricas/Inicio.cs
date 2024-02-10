@@ -62,6 +62,9 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_empty_CheckedChanged(object sender, EventArgs e)
         {
+            Graphics g = picbx_visualizer.CreateGraphics();
+            g.Clear(Color.LightGray);
+
             lbl_base_radio_lado.Text = "Base-Radio-Lado:";
             revision(lbl_base_radio_lado.Text);
         }
@@ -96,6 +99,7 @@ namespace Graficador_de_figuras_geométricas
             switch (lbl_base_radio_lado.Text)
             {
                 case "Lado:":
+                    DeleteEverySinglePainting();
                     picbx_visualizer.Paint += Picbx_visualizer_Paint_Cuadrado;
                     picbx_visualizer.Invalidate();
                     break;
@@ -103,25 +107,38 @@ namespace Graficador_de_figuras_geométricas
                 case "Base:":
                     if (rdbtn_Rectangulo.Checked)
                     {
+                        DeleteEverySinglePainting();
                         picbx_visualizer.Paint += Picbx_visualizer_Paint_Rectangulo;
                         picbx_visualizer.Invalidate();
                     }
                     else
                     {
+                        DeleteEverySinglePainting();
                         picbx_visualizer.Paint += Picbx_visualizer_Paint_Triangulo;
                         picbx_visualizer.Invalidate();
                     }
                     break;
 
                 case "Radio:":
+                    DeleteEverySinglePainting();
                     picbx_visualizer.Paint += Picbx_visualizer_Paint_Circulo;
                     picbx_visualizer.Invalidate();
                     break;
 
                 default:
-
+                    DeleteEverySinglePainting();
                     break;
             }
+        }
+
+        private void DeleteEverySinglePainting()
+        {
+            picbx_visualizer.Paint -= Picbx_visualizer_Paint_Cuadrado;
+            picbx_visualizer.Paint -= Picbx_visualizer_Paint_Circulo;
+            picbx_visualizer.Paint -= Picbx_visualizer_Paint_Rectangulo;
+            picbx_visualizer.Paint -= Picbx_visualizer_Paint_Triangulo;
+
+            picbx_visualizer.Invalidate();
         }
 
         private void Picbx_visualizer_Paint_Circulo(object sender, PaintEventArgs e)
@@ -168,7 +185,6 @@ namespace Graficador_de_figuras_geométricas
         private void Picbx_visualizer_Paint_Cuadrado(object sender, PaintEventArgs e)
         {
             int lado = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
-            MessageBoxButtons botones = MessageBoxButtons.YesNo;
 
             if(lado <= 195)
             {
@@ -182,9 +198,14 @@ namespace Graficador_de_figuras_geométricas
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Opciones ventana_nueva = new Opciones();
-            ventana_nueva.Show();
-            this.Hide();
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult diag = MessageBox.Show("Se perderán todos los dibujos, ¿desea continuar?", "Aviso", buttons);
+            if(diag == DialogResult.Yes)
+            {
+                Opciones ventana_nueva = new Opciones();
+                ventana_nueva.Show();
+                this.Hide();
+            }
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
