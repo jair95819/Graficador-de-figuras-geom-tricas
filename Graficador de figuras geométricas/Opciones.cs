@@ -14,8 +14,9 @@ namespace Graficador_de_figuras_geométricas
     {
         string[] colores_grafico = { "Yellow", "Blue", "Red", "Green", "Orange" }; 
         string color_grafico;
+        int c;
 
-        public Opciones()
+        public Opciones(Color color_actual)
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -23,11 +24,12 @@ namespace Graficador_de_figuras_geométricas
             {
                 cmbx_Colores.Items.Add(c);
             }
+            cmbx_Colores.SelectedItem = colores_grafico.First(color => color == color_actual.Name);
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(cmbx_Colores.Text == string.Empty)
+            if(c == 0)
             {
                 Inicio ventana_nueva = new Inicio();
                 ventana_nueva.Show();
@@ -55,6 +57,8 @@ namespace Graficador_de_figuras_geométricas
             {
                 MessageBox.Show(ex.Message);
             }
+
+            c++;
         }
     }
 }
