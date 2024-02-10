@@ -12,9 +12,7 @@ namespace Graficador_de_figuras_geométricas
 {
     public partial class Inicio : Form
     {
-        Color color_grafico;
-        string medidaX;
-        
+        Color color_grafico;        
 
         public Inicio()
         {
@@ -49,7 +47,7 @@ namespace Graficador_de_figuras_geométricas
         private void rdbtn_Rectangulo_CheckedChanged(object sender, EventArgs e)
         {
             this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 220");
-            this.toolTip2.SetToolTip(lbl_altura, "Solo puedes ingresar valores desde 0 hasta 195");
+            this.toolTip2.SetToolTip(lbl_altura, "Solo puedes ingresar valores desde 0 hasta 193");
             lbl_base_radio_lado.Text = "Base:";
             revision(lbl_base_radio_lado.Text);
         }
@@ -147,11 +145,8 @@ namespace Graficador_de_figuras_geométricas
 
             if(radio <= 195)
             {
-                Graphics g = e.Graphics;
-                Pen p = new Pen(color_grafico, 2);
-
-                Rectangle circulo = new Rectangle(30, 5, radio, radio);
-                g.DrawEllipse(p, circulo);
+                Circulo nuevo = new Circulo(radio);
+                nuevo.GraficarCirculo(e.Graphics, color_grafico);
             }
         }
 
@@ -172,13 +167,10 @@ namespace Graficador_de_figuras_geométricas
             int largo = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
             int alto = Convert.ToInt32(txtbx_alturaY.Text);
 
-            if (largo <= 220 && alto <= 195)
+            if (largo <= 220 && alto <= 193)
             {
-                Graphics g = e.Graphics;
-                Pen p = new Pen(color_grafico, 2);
-
-                Rectangle rectangulo = new Rectangle(30, 5, largo, alto);
-                g.DrawRectangle(p, rectangulo);
+                Rectangulo nuevo = new Rectangulo(largo, alto);
+                nuevo.GraficarRectangulo(e.Graphics, color_grafico);
             }
         }
 
@@ -188,12 +180,9 @@ namespace Graficador_de_figuras_geométricas
 
             if(lado <= 195)
             {
-                Graphics g = e.Graphics;
-                Pen p = new Pen(color_grafico, 2);
-
-                Rectangle cuadrado = new Rectangle(30, 5, lado, lado);
-                g.DrawRectangle(p, cuadrado);
-            }    
+                Cuadrado nuevo = new Cuadrado(lado);
+                nuevo.GraficarCuadrado(e.Graphics, color_grafico);
+            }
         }
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
