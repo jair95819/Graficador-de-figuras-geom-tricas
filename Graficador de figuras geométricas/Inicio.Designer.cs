@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rdbtn_Circulo = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +46,8 @@
             this.grpbx_Data = new System.Windows.Forms.GroupBox();
             this.lbl_none = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_visualizer)).BeginInit();
             this.grpbx_Data.SuspendLayout();
@@ -93,7 +96,7 @@
             this.picbx_visualizer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picbx_visualizer.Location = new System.Drawing.Point(290, 40);
             this.picbx_visualizer.Name = "picbx_visualizer";
-            this.picbx_visualizer.Size = new System.Drawing.Size(280, 202);
+            this.picbx_visualizer.Size = new System.Drawing.Size(280, 200);
             this.picbx_visualizer.TabIndex = 2;
             this.picbx_visualizer.TabStop = false;
             // 
@@ -221,6 +224,14 @@
             this.btn_Salir.UseVisualStyleBackColor = true;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.IsBalloon = true;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,6 +280,8 @@
         private System.Windows.Forms.GroupBox grpbx_Data;
         private System.Windows.Forms.Label lbl_none;
         private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
 

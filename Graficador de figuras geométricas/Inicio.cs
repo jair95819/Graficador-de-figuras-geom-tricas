@@ -14,6 +14,7 @@ namespace Graficador_de_figuras_geométricas
     {
         Color color_grafico;
         string medidaX;
+        
 
         public Inicio()
         {
@@ -33,18 +34,22 @@ namespace Graficador_de_figuras_geométricas
 
         private void rdbtn_Circulo_CheckedChanged(object sender, EventArgs e)
         {
+            this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 195");
             lbl_base_radio_lado.Text = "Radio:";
             revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Cuadrado_CheckedChanged(object sender, EventArgs e)
         {
+            this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 195");
             lbl_base_radio_lado.Text = "Lado:";
             revision(lbl_base_radio_lado.Text);
         }
 
         private void rdbtn_Rectangulo_CheckedChanged(object sender, EventArgs e)
         {
+            this.toolTip1.SetToolTip(lbl_base_radio_lado, "Solo puedes ingresar valores desde 0 hasta 220");
+            this.toolTip2.SetToolTip(lbl_altura, "Solo puedes ingresar valores desde 0 hasta 195");
             lbl_base_radio_lado.Text = "Base:";
             revision(lbl_base_radio_lado.Text);
         }
@@ -91,7 +96,6 @@ namespace Graficador_de_figuras_geométricas
             switch (lbl_base_radio_lado.Text)
             {
                 case "Lado:":
-                    
                     picbx_visualizer.Paint += Picbx_visualizer_Paint_Cuadrado;
                     picbx_visualizer.Invalidate();
                     break;
@@ -99,23 +103,66 @@ namespace Graficador_de_figuras_geométricas
                 case "Base:":
                     if (rdbtn_Rectangulo.Checked)
                     {
-
+                        picbx_visualizer.Paint += Picbx_visualizer_Paint_Rectangulo;
+                        picbx_visualizer.Invalidate();
                     }
                     else
                     {
-
+                        picbx_visualizer.Paint += Picbx_visualizer_Paint_Triangulo;
+                        picbx_visualizer.Invalidate();
                     }
                     break;
 
                 case "Radio:":
-
+                    picbx_visualizer.Paint += Picbx_visualizer_Paint_Circulo;
+                    picbx_visualizer.Invalidate();
                     break;
 
                 default:
 
                     break;
             }
-                
+        }
+
+        private void Picbx_visualizer_Paint_Circulo(object sender, PaintEventArgs e)
+        {
+            int radio = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
+
+            if(radio <= 195)
+            {
+                Graphics g = e.Graphics;
+                Pen p = new Pen(color_grafico, 2);
+
+                Rectangle circulo = new Rectangle(30, 5, radio, radio);
+                g.DrawEllipse(p, circulo);
+            }
+        }
+
+        private void Picbx_visualizer_Paint_Triangulo(object sender, PaintEventArgs e)
+        {
+            int baseT = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
+            int alturaT = Convert.ToInt32(txtbx_alturaY.Text);
+
+            Graphics g = e.Graphics;
+            Pen p = new Pen(color_grafico, 2);
+
+
+            g.DrawLine(p, 150, alturaT, 10, baseT); //FALTA CORREGIR
+        }
+
+        private void Picbx_visualizer_Paint_Rectangulo(object sender, PaintEventArgs e)
+        {
+            int largo = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
+            int alto = Convert.ToInt32(txtbx_alturaY.Text);
+
+            if (largo <= 220 && alto <= 195)
+            {
+                Graphics g = e.Graphics;
+                Pen p = new Pen(color_grafico, 2);
+
+                Rectangle rectangulo = new Rectangle(30, 5, largo, alto);
+                g.DrawRectangle(p, rectangulo);
+            }
         }
 
         private void Picbx_visualizer_Paint_Cuadrado(object sender, PaintEventArgs e)
@@ -123,26 +170,14 @@ namespace Graficador_de_figuras_geométricas
             int lado = Convert.ToInt32(txtbx_base_radio_ladoX.Text);
             MessageBoxButtons botones = MessageBoxButtons.YesNo;
 
-            if(lado >= 195)
-            {
-                DialogResult diag = MessageBox.Show("EL cuadrado podría salir de los márgenes del marco, ¿Desea continuar?", "Aviso", botones);
-                if (diag.Equals(DialogResult.Yes)) //CORREGIR PROBLEMA MESSAGE BOX
-                {
-                    Graphics g = e.Graphics;
-                    Pen p = new Pen(color_grafico, 2);
-
-                    Rectangle cuadrado = new Rectangle(30, 5, lado, lado);
-                    g.DrawRectangle(p, cuadrado);
-                }
-                
-            } else
+            if(lado <= 195)
             {
                 Graphics g = e.Graphics;
                 Pen p = new Pen(color_grafico, 2);
 
                 Rectangle cuadrado = new Rectangle(30, 5, lado, lado);
                 g.DrawRectangle(p, cuadrado);
-            }     
+            }    
         }
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
